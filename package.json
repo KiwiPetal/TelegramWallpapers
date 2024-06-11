@@ -1,0 +1,23 @@
+{
+  "name": "TelegramWallpapers",
+  "version": "0.0.1",
+  "main": "index.ts",
+  "repository": "https://github.com/KiwiPetal/TelegramWallpapers",
+  "author": "KiwiPetal <kiwipetal@kittymail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.12.13",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "scripts": {
+    "start": "npx ts-node index.ts"
+  },
+  "dependencies": {
+    "canvas": "^2.11.2",
+    "dotenv": "^16.4.5",
+    "stackblur-canvas": "^2.7.0",
+    "telegraf": "^4.16.3",
+    "telegraf-session-local": "^2.1.1"
+  }
+}
