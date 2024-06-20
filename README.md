@@ -5,7 +5,7 @@ A small script written with Telegraf.js that turns any image into a fitted phone
 ## TODOs
 
 - [x] Script to Make images
+- [x] Custom intensity
 - [ ] Custom resolution
-- [ ] Custom intensity
 - [ ] Shadow
 - [ ] Colour instead of blur
