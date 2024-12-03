@@ -10,6 +10,8 @@ composer.on(message("text"), (ctx) => {
   if (!Number.isInteger(Number(ctx.message.text))) return;
   if (!ctx.session) ctx.session = { blurRadius: Number(ctx.message.text) };
   else ctx.session.blurRadius = Number(ctx.message.text);
+
+  ctx.reply("New blur value accepted!")
 });
 
 // Wallpaper handler
