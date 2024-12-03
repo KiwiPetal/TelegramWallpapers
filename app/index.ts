@@ -1,18 +1,8 @@
 // Imports {{{
-
 require("dotenv").config();
-import {
-  existsSync,
-  mkdirSync,
-} from "fs";
 import bot from "./bot";
 import imageComposer from "./handlers/index";
-
 // }}}
-
-if (!existsSync("backup/")) {
-  mkdirSync("backup/");
-}
 
 bot.use(imageComposer);
 

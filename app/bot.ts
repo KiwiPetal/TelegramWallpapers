@@ -2,14 +2,18 @@ import { Telegraf } from "telegraf";
 import { BotContext } from "./models/bot";
 import { BOT_TOKEN } from "./utilities/validateEnv";
 import LocalSession from "telegraf-session-local";
+import { existsSync, mkdirSync } from "fs";
 
 const bot: Telegraf<BotContext> = new Telegraf(BOT_TOKEN, {
   telegram: { webhookReply: false },
 });
 
 // LocalSession setup
+if (!existsSync("../backup/")) {
+  mkdirSync("../backup/");
+}
 const localSession = new LocalSession({
-  database: "backup/sessionDB.json",
+  database: "../backup/sessionDB.json",
   property: "session",
 });
 bot.use(localSession.middleware());
