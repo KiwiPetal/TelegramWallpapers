@@ -4,6 +4,8 @@ A telegram bot written with [Telegraf.js](https://telegraf.js.org) that turns an
 
 The project uses [Docker](https://www.docker.com), to make the setup easier.
 
+Credits to [@MakotoIchinose6](https://x.com/MakotoIchinose6/status/1844079729235939375) for the image of Clive they made that I use for the preview. (I'm absolutely in love)
+
 ![Telegram Wallpaper Bot screenshot](https://i.imgur.com/Yy6PEGD.png)
 
 ## Table of Contents
