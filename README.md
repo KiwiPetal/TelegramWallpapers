@@ -2,7 +2,9 @@
 
 A telegram bot written with [Telegraf.js](https://telegraf.js.org) that turns any image sent into a fitted phone wallpaper with a blurry background.
 
-The project uses Docker, to make the setup easier.
+The project uses [Docker](https://www.docker.com), to make the setup easier.
+
+![Telegram Wallpaper Bot screenshot](https://i.imgur.com/Yy6PEGD.png)
 
 ## Table of Contents
 
