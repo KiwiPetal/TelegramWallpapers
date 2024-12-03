@@ -5,7 +5,8 @@ import {
   writeFileSync,
   unlinkSync
 } from "fs";
-import {Telegraf} from "telegraf";
+import {Context, Telegraf} from "telegraf";
+import { IpicReq } from "../models/functions";
 
 export function scalingFactor(dh: number, dw: number, sh: number, sw: number, fit: boolean): number {
   const widthRatio = sw / dw;
@@ -16,14 +17,7 @@ export function scalingFactor(dh: number, dw: number, sh: number, sw: number, fi
     : widthRatio > heightRatio ? widthRatio : heightRatio
 }
 
-export interface IpicReq {
-  height: number;
-  width: number;
-  src: string;
-  blurRadius: number;
-  id: number;
-}
-export function genPicture(bot: Telegraf, vars: IpicReq) {
+export function genPicture(botContext: Context, vars: IpicReq) {
   try {
     const canvas = createCanvas(vars.width, vars.height);
     const ctx = canvas.getContext("2d");
@@ -71,7 +65,7 @@ export function genPicture(bot: Telegraf, vars: IpicReq) {
       // Download/Telegram Message
       const buffer = canvas.toBuffer("image/png");
       writeFileSync("./image.png", buffer);
-      await bot.telegram.sendPhoto(vars.id, { source: "./image.png" });
+      await botContext.sendPhoto({ source: "./image.png" })
       if (existsSync("./image.png"))
         unlinkSync("./image.png");
     });
